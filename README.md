@@ -2,7 +2,7 @@
 タスク管理ウェブアプリケーション  
 <https://taskmanagement.biz>
 ## demo
-https://raw.github.com/wiki/ryusei1068/task-management/images/mcbcc-2byvn.gif
+![result](https://raw.github.com/wiki/ryusei1068/task-management/images/mcbcc-2byvn.gif)
 
 ## usage
 signUp・・・新規登録  
