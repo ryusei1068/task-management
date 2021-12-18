@@ -18,8 +18,8 @@ const logout = require("./routes/logout");
 const PORT = 8000;
 
 const corsOptions = {
-    origin: process.env.ORIGIN || "http://localhost:3000",
-    credentials: true 
+  origin: process.env.ORIGIN || "http://localhost:3000",
+  credentials: true
 };
 
 app.use(cors(corsOptions));
@@ -35,5 +35,5 @@ app.use("/detail", authenticateToken, updateCookies, detail);
 app.use("/user", authenticateToken, user);
 
 app.listen(PORT, () => {
-	console.log(`Task management app listening at ${PORT}`);
+  console.log(`Task management app listening at ${PORT}`);
 });

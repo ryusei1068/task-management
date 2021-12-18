@@ -1,101 +1,111 @@
 .board-wrapper {
-    background-color: rgb(67, 72, 83);
-    height: 100vh;
-} 
+  background-color: rgb(67, 72, 83);
+  height: 100vh;
+}
 
 .board-canvas {
-    display: flex;
-    overflow-y: auto;
-    padding-top: 2rem;
+  display: flex;
+  overflow-y: auto;
+  padding-top: 2rem;
 }
 
 .add-list {
-    width: 250px;
-    color: aliceblue;
-    text-align: left;
-    background-color: rgb(86, 97, 107);
+  width: 250px;
+  color: aliceblue;
+  text-align: left;
+  background-color: rgb(86, 97, 107);
 }
 
 textarea {
-    resize: none;
-    border: none;
+  resize: none;
+  border: none;
 }
 
-.list-wrapper, .enter-section-name-wrap {
-    border-radius: 5px;
+.list-wrapper,
+.enter-section-name-wrap {
+  border-radius: 5px;
 }
 
-.list-wrapper, .section-title {
-    width: 250px;
+.list-wrapper,
+.section-title {
+  width: 250px;
 }
 
-.enter-task-name, .section-title, .list-wrapper, .cancel-btn {
-    background-color: rgb(239, 239, 239);
+.enter-task-name,
+.section-title,
+.list-wrapper,
+.cancel-btn {
+  background-color: rgb(239, 239, 239);
 }
 
-.task-name, input, .section-title, .btn .task-detail{
-    border: none;
+.task-name,
+input,
+.section-title,
+.btn .task-detail {
+  border: none;
 }
 
-.add-section  {
-    display: flex;
-    align-items: center;
+.add-section {
+  display: flex;
+  align-items: center;
 }
 
 .enter-section-name-wrap {
-    height: 85px;
-    background-color: white;
+  height: 85px;
+  background-color: white;
 }
 
-.sectionName-wrap:hover, .section-title:hover {
-    cursor: pointer;
+.sectionName-wrap:hover,
+.section-title:hover {
+  cursor: pointer;
 }
 
 .sectionName-wrap {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 
-.section-title  {
-    font-size: large;
-    color: rgb(25, 37, 66);
+.section-title {
+  font-size: large;
+  color: rgb(25, 37, 66);
 }
 
-.task-name, .task-detail {
-    width: 100%;
+.task-name,
+.task-detail {
+  width: 100%;
 }
 
 .task-cards {
-    margin-top: 0.2rem;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  margin-top: 0.2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .toast {
-    width: 90%;
-    margin-top: 0.5rem;
+  width: 90%;
+  margin-top: 0.5rem;
 }
 
 .task-name {
-    color: rgb(47, 47, 47);
-    font-size: large;
-    font-family: serif;
-    margin-bottom: 0%;
-    background-color: white;
+  color: rgb(47, 47, 47);
+  font-size: large;
+  font-family: serif;
+  margin-bottom: 0%;
+  background-color: white;
 }
 
 .task-detail {
-    background-color: white;
+  background-color: white;
 }
 
 .toast-header {
-    align-items: flex-end;
+  align-items: flex-end;
 }
 
 .listName {
-    margin-bottom: 0%;
-    width: 100%;
+  margin-bottom: 0%;
+  width: 100%;
 }

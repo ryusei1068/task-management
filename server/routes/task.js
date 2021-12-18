@@ -10,47 +10,47 @@ const db = require("../db/models/index");
 const task = db.sequelize.models.Task;
 
 router.post("/", (req, res) => {
-    const { tasklistID, taskName } = req.body.data;
-    const taskname = sanitize(taskName);
+  const { tasklistID, taskName } = req.body.data;
+  const taskname = sanitize(taskName);
 
-    insertItem(task, {TaskName: taskname, tasklistid: tasklistID})
+  insertItem(task, { TaskName: taskname, tasklistid: tasklistID })
     .then(newTask => {
-        res.status(201)
+      res.status(201)
         .json({
-            taskID : newTask.id,
-            taskName: newTask.TaskName
+          taskID: newTask.id,
+          taskName: newTask.TaskName
         })
     })
     .catch(() => {
-        res.sendStatus(500);
+      res.sendStatus(500);
     })
 })
 
 router.delete('/', (req, res) => {
-    const taskid = req.body.id;
+  const taskid = req.body.id;
 
-    deleteItem(task, {id: taskid})
+  deleteItem(task, { id: taskid })
     .then(() => {
-        res.sendStatus(200);
+      res.sendStatus(200);
     })
     .catch(err => {
-        res.sendStatus(500);
+      res.sendStatus(500);
     })
 })
 
 router.put("/", (req, res) => {
-    const { id, TaskName } = req.body.data;
-    const newTaskName = sanitize(TaskName);
+  const { id, TaskName } = req.body.data;
+  const newTaskName = sanitize(TaskName);
 
-    updateItem(task, {TaskName: newTaskName}, {id: id})
+  updateItem(task, { TaskName: newTaskName }, { id: id })
     .then(() => {
-        res.status(200)
+      res.status(200)
         .json({
-            TaskName: newTaskName
+          TaskName: newTaskName
         })
     })
     .catch(err => {
-        res.sendStatus(500);
+      res.sendStatus(500);
     })
 });
 
