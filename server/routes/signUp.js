@@ -27,7 +27,7 @@ router.post("/", async (req, res) => {
         const data = issueCookie(id, username);
         const keys = Object.keys(data);
         keys.forEach(key => {res.cookie(key, data[key], {
-                       httpOnly : true,
+                       httpOnly : key === "authenticated" ? false : true,
                        maxAge : oneHour,
                        secure : true,
                        sameSite : "lax"

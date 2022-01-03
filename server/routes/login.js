@@ -21,7 +21,7 @@ router.post("/", (req, res) => {
         const keys = Object.keys(data);
         const oneHour = 60 * 60 * 1000;
         keys.forEach(key => {res.cookie(key, data[key], {
-                       httpOnly : true,
+                       httpOnly : key === "authenticated" ? false : true,
                        maxAge : oneHour,
                        secure : true,
                        sameSite : "lax"
