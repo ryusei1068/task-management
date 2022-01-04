@@ -11,21 +11,25 @@ router.post("/", (req, res) => {
                    .update('I love ice cream')
                    .digest('hex');
   User.findAll({where : {username : username, password : hash}})
-      .then(user => {
-        if (user.length === 0) {
-          return res.json(
-              {"result" : {"code" : 403, "message" : "failed login"}})
-        }
-        const {id, username} = user[0].dataValues;
-        const data = issueCookie(id, username);
-        const keys = Object.keys(data);
-        const oneHour = 60 * 60 * 1000;
-        keys.forEach(key => {res.cookie(key, data[key], {
-                       httpOnly : key === "authenticated" ? false : true,
-                       maxAge : oneHour,
-                       secure : true,
-                       sameSite : "lax"
-                     })});
+    .then(user => {
+      if (user.length === 0) {
+        return res.json(
+          {"result" : {"code" : 403, "message" : "failed login"}})
+      }
+      const {id, username} = user[0].dataValues;
+      const data = issueCookie(id, username);
+      const keys = Object.keys(data);
+      const oneHour = 60 * 60 * 1000;
+      keys.forEach(key => {
+        res.cookie(key, data[key], 
+          {
+            httpOnly : key === "authenticated" ? false : true,
+            maxAge : oneHour,
+            secure : true,
+            sameSite : "lax"
+          }
+        )
+      });
         res.json({"result" : {"code" : 201, "message" : "success"}})
       })
       .catch(err => {
