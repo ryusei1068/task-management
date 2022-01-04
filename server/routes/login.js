@@ -2,14 +2,13 @@ const crypto = require('crypto');
 const express = require("express");
 const router = express.Router();
 const issueCookie = require("../src/issueCookie");
+const hashing = require("../src/hash");
 const db = require("../db/models/index");
 const User = db.sequelize.models.User;
 
 router.post("/", (req, res) => {
   const {username, password} = req.body;
-  const hash = crypto.createHmac('sha256', password)
-                   .update('I love ice cream')
-                   .digest('hex');
+  const hash = hashing(password);
   User.findAll({where : {username : username, password : hash}})
     .then(user => {
       if (user.length === 0) {

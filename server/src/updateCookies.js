@@ -1,7 +1,7 @@
 function updateCookies(req, res, next) {
   const {token, authenticated, indiv} = req.cookies;
   const keys = Object.keys(req.cookies);
-  if (token === "" || authenticated === "" || indiv === "") {
+  if (keys.length != 3 || token === "" || authenticated === "" || indiv == "") {
     keys.forEach(key => { res.cookie(key, "", {maxAge : 0}); });
     return res.sendStatus(401);
   }

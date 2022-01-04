@@ -5,7 +5,6 @@ const app = express();
 const cors = require("cors");
 const authenticateToken = require("./src/jwt");
 const updateCookies = require("./src/updateCookies");
-
 const tasklist = require("./routes/tasklist");
 const task = require("./routes/task");
 const board = require("./routes/board");

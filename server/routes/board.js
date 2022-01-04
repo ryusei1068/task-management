@@ -7,7 +7,7 @@ const task = db.sequelize.models.Task;
 
 router.get("/", (req, res) => {
   const {indiv} = req.cookies;
-  if (indiv === "") return ;
+  
   tasklist.findAll({
     attributes : [ "id", "listName" ],
     where : {userid : indiv},
