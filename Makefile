@@ -1,9 +1,5 @@
 run:
-	cd taskmanagement/server
-	npm install --save-dev sequelize-cli
-	cd db
-	sequelize db:create
-	sequelize db:migrate
-	cd ..
-	cd ..
+	cd server && npm install --save-dev sequelize-cli
+	cd server/db && sequelize db:create
+	cd server/db && sequelize db:migrate
 	npm run dev
