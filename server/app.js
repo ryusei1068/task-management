@@ -34,4 +34,4 @@ app.use("/detail", authenticateToken, updateCookies, detail);
 app.use("/user", authenticateToken, user);
 
 app.listen(PORT,
-           () => { console.log(`Task management app listening at ${PORT}`); });
+          () => { console.log(`Task management app listening at ${PORT}`); });
