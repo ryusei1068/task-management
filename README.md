@@ -6,6 +6,7 @@
 ## Require
 Node.js v16.13.1  
 Mysql 8.0.28  
+macOS 12.4  
   
 ## Usage
 ```
